@@ -18,7 +18,7 @@ class DeviceSeeder extends Seeder
         ];
 
         foreach ($devices as $device) {
-            Device::create($device);
+            Device::firstOrCreate(['device_code' => $device['device_code']]);
         }
     }
 }
